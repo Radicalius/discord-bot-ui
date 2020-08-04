@@ -48,4 +48,4 @@ async def status(ctx):
         await message.remove_reaction(reaction.emoji, user)
     await message.clear_reactions()
 
-bot.run(os.environ["API_CODE"])
+bot.run(os.environ["BOT_CODE"])
