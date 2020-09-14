@@ -26,7 +26,7 @@ async def status(ctx):
         except TimeoutError:
             break
 
-        if str(user) != "shopkeeper#4781":
+        if str(user) != "ui-demo#9534":
             if reaction.emoji == "\u25c0":
                 i += 1
             #if reaction.emoji == "\u25c1":
@@ -39,13 +39,14 @@ async def status(ctx):
             await message.edit(embed=discord.Embed(
                  title="Server Status - {0}".format(server),
                  description="""
-            ```diff
- {0} Server is {1}
-            ```
-            """.format("+" if servers[server] == "UP" else "-", servers[server])
+```diff
+{0} Server is {1}
+```
+""".format("+" if servers[server] == "UP" else "-", servers[server])
             ))
 
-        await message.remove_reaction(reaction.emoji, user)
+            await message.remove_reaction(reaction.emoji, user)
+
     await message.clear_reactions()
 
 bot.run(os.environ["BOT_CODE"])
